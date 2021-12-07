@@ -4,7 +4,6 @@ import { TextInput, StyleSheet, View } from 'react-native';
 
 const Input = props => {
   //learned double override styling, have similar styling on reusable input component
-  console.log(props, 'this is the 2nd last call');
   return (
     <TextInput {...props} style={{ ...styles.input, ...props.style}} />
   )
