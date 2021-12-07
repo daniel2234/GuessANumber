@@ -28,7 +28,7 @@ const StartGameScreen = props => {
     if(isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
       Alert.alert('Invalid Number',
                   'Number has to be a number between 1 to 99.', 
-                  [{text:'Okay', style:'destructice', onPress: resetNumberHandler}]
+                  [{text:'Okay', style:'destructive', onPress: resetNumberHandler}]
                   )
       return;
     }
@@ -45,12 +45,10 @@ const StartGameScreen = props => {
       <Card style={styles.summaryContainer}>
         <Text>You selected</Text>
         <NumberContainer>{selectedNumber}</NumberContainer>
-        <Button title="START GAME"/>
+        <Button title="START GAME" onPress={() => props.onStartGame(selectedNumber)}/>
       </Card>
     );
   }
-
-
   return (
     <TouchableWithoutFeedback onPress={
       () => Keyboard.dismiss()
